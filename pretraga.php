@@ -70,7 +70,7 @@ function showResult1(str) {
 
 <ul id="TopNav" class="topnav">
 	
-	<li> <a id="trenutni" href="pocetna.php"> POČETNA </a></li>
+	<li> <a id="trenutni" href="index.php"> POČETNA </a></li>
 	<li> <a href="#" onclick="prikaz('onama.html')"> O NAMA </a></li>
 	<li> <a href="#" onclick="prikaz('ffusluge.php')"> FRIZERSKE USLUGE </a></li>
 	<li> <a href="#" onclick="prikaz('kusluge.php')"> KOZMETIČKE USLUGE </a></li>
