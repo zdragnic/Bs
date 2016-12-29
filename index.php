@@ -158,7 +158,7 @@ header("location: anketarez.php");
 	<div class="underline"> <h1>Anketa</h1> </div>
 		<p>Koliko često posjećujete kozmetički salon?</p>
 
-		<form action="pocetna.php" method="post" >
+		<form action="index.php" method="post" >
 	  	<input type='radio' name="anketa" value="1"> jednom sedmično<br>
   		<input type='radio' name="anketa" value="2"> jednom mjesečno<br>
  		<input type='radio' name="anketa" value="3"> jednom  godišnjee<br>

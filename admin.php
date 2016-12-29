@@ -1,6 +1,6 @@
 <?php
 include('session.php');
-include('.\fpdf181\fpdf.php');
+include('./fpdf181/fpdf.php');
 ?>
 <!DOCTYPE html>
 <html>
