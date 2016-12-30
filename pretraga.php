@@ -26,8 +26,8 @@ function showResult(str) {
   }
   xmlhttp.onreadystatechange=function() {
     if (this.readyState==4 && this.status==200) {
-      document.getElementById("livesearch").innerHTML=this.responseText;
-      document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+      document.getElementById("trazi").innerHTML=this.responseText;
+      document.getElementById("trazi").style.border="1px solid #A5ACB2";
     }
   }
   xmlhttp.open("GET","livesearch.php?q="+str,true);
@@ -36,8 +36,8 @@ function showResult(str) {
 
 function showResult1(str) {
   if (str.length==0) { 
-    document.getElementById("livesearch").innerHTML="";
-    document.getElementById("livesearch").style.border="0px";
+    document.getElementById("trazi").innerHTML="";
+    document.getElementById("trazi").style.border="0px";
     return;
   }
   if (window.XMLHttpRequest) {
@@ -47,8 +47,8 @@ function showResult1(str) {
   }
   xmlhttp.onreadystatechange=function() {
     if (this.readyState==4 && this.status==200) {
-      document.getElementById("livesearch").innerHTML=this.responseText;
-      document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+      document.getElementById("trazi").innerHTML=this.responseText;
+      document.getElementById("trazi").style.border="1px solid #A5ACB2";
     }
   }
   xmlhttp.open("GET","livesearch1.php?q="+str,true);
@@ -113,7 +113,7 @@ function showResult1(str) {
 <tr><td><input type="hidden" id="vrijednost"></td></tr>
 <br>
 </table>
-<div id="livesearch" style="text-align:left; margin-left:25%; margin-right:25%; width:40%;"></div>
+<div id="trazi" style="text-align:left; margin-left:25%; margin-right:25%; width:40%;"></div>
 
 </form>
 <br>

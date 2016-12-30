@@ -74,7 +74,7 @@ if(isset($_POST['kontaktdugme'])){
     $ime=$_POST['imeprezime'];
     $mejl=$_POST['email'];
     $porukica=$_POST['poruka'];
-if(!preg_match("/^[a-žA-Ž0-9][a-žA-Ž0-9\s.,?:+]*$/", $porukica)){
+if(!preg_match("/^[a-žA-Ž0-9][a-žA-Ž0-9\s.,?:+!]*$/", $porukica)){
     $greska="Poruka moze sadrzavati samo slova,brojeve i znakove :+?.,";
 }
 
@@ -103,9 +103,9 @@ $greska="";
     $kontakt = $xml->createElement("kontakt");
     $xmlKorijen->appendChild($kontakt);
 
-    $kontakt->appendChild($xml->createElement('ime',$ime));
-    $kontakt->appendChild($xml->createElement('email',$mejl));
-    $kontakt->appendChild($xml->createElement('poruka',$porukica));
+    $kontakt->appendChild($xml->createElement('ime',htmlspecialchars($ime)));
+    $kontakt->appendChild($xml->createElement('email',htmlspecialchars($mejl)));
+    $kontakt->appendChild($xml->createElement('poruka',htmlspecialchars($porukica)));
     $xml->save("Kontakt.xml");
 }
 }
@@ -121,11 +121,11 @@ $greska="";
 		<h2>Pošaljite nam poruku</h2>
 		<form name="kontakt-forma" onsubmit="return validirajKontakt()"  action= "kontakt.php" method="POST">
 		Ime i prezime:<br>
-  		<input type="text" name="imeprezime" value=" " class="kontakt-imemail" id="kontakt-ime" onchange="validirajKontakt();" > <br> 
+  		<input type="text" name="imeprezime"  class="kontakt-imemail" id="kontakt-ime" onchange="validirajKontakt();" > <br> 
   		Email:<br>
-  		<input type="text" name="email" value=" " class="kontakt-imemail" id="kontakt-mail" onchange="validirajKontakt();" > <br>
+  		<input type="text" name="email"  class="kontakt-imemail" id="kontakt-mail" onchange="validirajKontakt();" > <br>
   		Poruka:<br>
-  		<textarea  name="poruka" value=" " class="kontakt-poruka" id="kontakt-poruka" onchange="validirajKontakt();" > </textarea>  <br> 
+  		<textarea  name="poruka" class="kontakt-poruka" id="kontakt-poruka" onchange="validirajKontakt();" > </textarea>  <br> 
   		<label id="kon-labela"></label> <br><br>
         <span><?php print "$greska"; ?></span> <br><br>
   		<input type="submit" value="Pošalji!" class="dugme" id="kon-dugme" name="kontaktdugme"> <br>

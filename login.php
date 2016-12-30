@@ -9,8 +9,8 @@ $error = "Greska username ili pass!";
 else if (file_exists('Admin.xml')) {
 
 $xml = simplexml_load_file('Admin.xml');
-$username=$_POST['username'];
-$password=$_POST['password'];
+$username= htmlspecialchars($_POST['username']);
+$password= htmlspecialchars($_POST['password']);
 foreach($xml->korisnik as $korisnik){
 if ($username==$korisnik->username && $password== $korisnik->password) {
 $_SESSION['login_user']=$username;

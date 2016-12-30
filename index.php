@@ -77,6 +77,7 @@ header("location: admin.php");
     <!-- Skripta za spasavanje podataka u xml iz newsletter forme -->
     <!-- Validacija emaila prije unosa u xml -->
 <?php
+    
 $greska="";
 if(isset($_POST['newsdugme'])){
     
