@@ -67,18 +67,19 @@ $pdf->Cell(0,20,'Beauty Salon',0,2,'C');
 $pdf->SetFontSize(12);
 $pdf->SetTextColor(0, 0, 0);
 $pdf->Ln(2);
-$pdf->Cell(40,10,'Ime i prezime',0);
-$pdf->Cell(60,10,'E-mail',0);
-$pdf->Cell(60,10,'Poruka',0,1);
+$pdf->Cell(50,10,'Ime i prezime',0);
+$pdf->Cell(70,10,'E-mail',0);
+$pdf->Cell(80,10,'Poruka',0,1);
 
 $filexml='Kontakt.xml';
 
 if (file_exists($filexml)) {
     $xml = simplexml_load_file($filexml);
   foreach ($xml->kontakt as $kontakt) {
-    $pdf->Cell(40,10,$kontakt->ime);
-    $pdf->Cell(60,10,$kontakt->email,0);
-    $pdf->Cell(90,10,$kontakt->poruka,0,3);
+    $pdf->Cell(50,10,$kontakt->ime);
+    $pdf->Cell(70,10,$kontakt->email,0);
+    $pdf->MultiCell(80,10,$kontakt->poruka,0,3);
+
 
 
       $pdf->Ln(2);
