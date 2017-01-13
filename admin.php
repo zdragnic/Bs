@@ -53,7 +53,7 @@ include('./fpdf181/fpdf.php');
 <?php
     
 //KONEKCIJA NA BAZU
-$veza = new PDO("mysql:dbname=baza;host=mysql-57-centos7", "zerina", "wtspirala4");
+$veza = new PDO("mysql:dbname=beautysalon;host=mysql-57-centos7", "zerina", "wtspirala4");
 $veza->exec("set names utf8");
 
 if(isset($_GET['xmltodb'])){

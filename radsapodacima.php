@@ -62,7 +62,7 @@ $greska="";
 $greska1="";    
 
 //KONEKCIJA NA BAZU
-$veza = new PDO("mysql:dbname=baza;host=mysql-57-centos7", "zerina", "wtspirala4");
+$veza = new PDO("mysql:dbname=beautysalon;host=mysql-57-centos7", "zerina", "wtspirala4");
 $veza->exec("set names utf8");
 
 //EDIT FUSLUGE

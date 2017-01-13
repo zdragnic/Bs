@@ -7,7 +7,7 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
 $error = "Greska username ili pass!";
 }
 else  {
-$veza = new PDO("mysql:dbname=baza;host=mysql-57-centos7", "zerina", "wtspirala4");
+$veza = new PDO("mysql:dbname=beautysalon;host=mysql-57-centos7", "zerina", "wtspirala4");
 $veza->exec("set names utf8");
     
 $username= htmlspecialchars($_POST['username']);

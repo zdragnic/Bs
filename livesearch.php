@@ -1,7 +1,7 @@
 <?php
  //if (file_exists("Kusluge.xml")) {
  //$xmlDoc = simplexml_load_file("Kusluge.xml");
-$veza = new PDO("mysql:dbname=baza;host=mysql-57-centos7", "zerina", "wtspirala4");
+$veza = new PDO("mysql:dbname=beautysalon;host=mysql-57-centos7", "zerina", "wtspirala4");
 $veza->exec("set names utf8");
 $vrijednostiK= $veza->query("SELECT id, nazivusluge, cijena FROM `kusluge` order by id asc ;");
 if (!$vrijednostiK) {

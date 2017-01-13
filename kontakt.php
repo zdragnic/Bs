@@ -116,7 +116,7 @@ $greska="";
     //$xml->save("Kontakt.xml"); 
     
     //KONEKCIJA NA BAZU
-$veza = new PDO("mysql:dbname=baza;host=mysql-57-centos7", "zerina", "wtspirala4");
+$veza = new PDO("mysql:dbname=beautysalon;host=mysql-57-centos7", "zerina", "wtspirala4");
 $veza->exec("set names utf8");
 $upit = $veza->query("INSERT INTO `poruka` (`id`, `imeprezime`, `email`, `poruka`) VALUES (NULL, '$ime', '$mejl', '$porukica');");
      if (!$upit) {

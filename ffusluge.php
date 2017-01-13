@@ -78,7 +78,7 @@ header("location: admin.php");
 
         <br>
 		<?php
-        $veza = new PDO("mysql:dbname=baza;host=mysql-57-centos7", "zerina", "wtspirala4");
+        $veza = new PDO("mysql:dbname=beautysalon;host=mysql-57-centos7", "zerina", "wtspirala4");
         $veza->exec("set names utf8");
         $upit= $veza->query("SELECT id, nazivusluge, cijena FROM `fusluge` order by id asc");
         
