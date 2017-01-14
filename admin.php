@@ -102,6 +102,7 @@ foreach ($xml->kusluga as $k) {
     }
     $brojac++;
     $rezultat = $veza->query("INSERT INTO `kusluge` (`id`, `nazivusluge`, `cijena`) VALUES (NULL, '$k->naziv', '$k->cijena');");
+    $upitopis= $veza->query("INSERT INTO `uslugedetalji` (`nazivusluge`, `opis`, `autor`) VALUES ('$k->naziv', 'Ovo je defaultni opis usluge. Stranica je u izradi. Pravi opisi naknadno ce biti dodani.', '1');");
     
       if (!$rezultat) {
           $greska = $veza->errorInfo();
