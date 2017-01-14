@@ -109,7 +109,6 @@ if(isset($_REQUEST['mijenjanjek'])){
     else{$greska1="";
          
 
-    $xml->asXML("Kusluge.xml");
          
     //edit u bazi
          $autorid= $veza->query("SELECT id FROM `korisnici` WHERE username LIKE '$autor';");
