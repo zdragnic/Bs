@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Jan 14, 2017 at 01:03 AM
+=======
+-- Generation Time: Jan 13, 2017 at 11:18 PM
+>>>>>>> 362d24dc5d6f456272af7bd0b87d351f07714c8b
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -19,6 +23,11 @@ SET time_zone = "+00:00";
 --
 -- Database: `beautysalon`
 --
+<<<<<<< HEAD
+=======
+CREATE DATABASE IF NOT EXISTS `beautysalon` DEFAULT CHARACTER SET utf8 COLLATE utf8_slovenian_ci;
+USE `beautysalon`;
+>>>>>>> 362d24dc5d6f456272af7bd0b87d351f07714c8b
 
 -- --------------------------------------------------------
 
@@ -272,12 +281,20 @@ ALTER TABLE `anketa`
 -- AUTO_INCREMENT for table `fusluge`
 --
 ALTER TABLE `fusluge`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+>>>>>>> 362d24dc5d6f456272af7bd0b87d351f07714c8b
 --
 -- AUTO_INCREMENT for table `kusluge`
 --
 ALTER TABLE `kusluge`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+>>>>>>> 362d24dc5d6f456272af7bd0b87d351f07714c8b
 --
 -- AUTO_INCREMENT for table `newsletter`
 --
