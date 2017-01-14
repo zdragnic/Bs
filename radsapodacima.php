@@ -81,21 +81,7 @@ if(isset($_REQUEST['mijenjanjef'])){
         $greska1="Cijena mora samo brojeve sadrzavati!";
     }
     else{$greska1="";
-    $xml=simplexml_load_file("Fusluge.xml");
-     
-$brojac=0;
-foreach ($xml->fusluga as $fusluga) {
-$brojac++;
-
-if($brojac == $red){
-    $fusluga->naziv= $n;
-$fusluga->cijena= $c;
-
-    break;
-}
-
-}
-    $xml->asXML("Fusluge.xml");
+    
          
      $r= $veza->query("UPDATE `fusluge` SET `nazivusluge` = '$n', `cijena` = '$c' WHERE `id` = '$red';");    
          
@@ -121,21 +107,8 @@ if(isset($_REQUEST['mijenjanjek'])){
         $greska1="Cijena mora samo brojeve sadrzavati!";
     }
     else{$greska1="";
-    
-    $xml=simplexml_load_file("Kusluge.xml");
-     
-$brojac=0;
-foreach ($xml->kusluga as $kusluga) {
-$brojac++;
+         
 
-if($brojac == $red){
-    $kusluga->naziv= $n;
-$kusluga->cijena= $c;
-
-    break;
-}
-
-}
     $xml->asXML("Kusluge.xml");
          
     //edit u bazi
@@ -156,20 +129,7 @@ $kusluga->cijena= $c;
     $pr='cijenaf'.(string)$red ;
      $n=$_REQUEST[$i];
     $c=$_REQUEST[$pr];
-    $xml = new DOMDocument('1.0', 'UTF-8');
-    $xml->load("Fusluge.xml");
-    $xmlKorijen= $xml->documentElement;
-     $items= $xml->getElementsByTagName('fusluga');
-
-     for ($i = 0; $i < $items->length; $i++) {
-  if($i === $red -1){
-       $cvor=$items->item($i);
-       $roditelj= $items->item($i)->parentNode; 
-        $roditelj->removeChild($cvor);      
-break;     
-  }
-  }
-    $xml->save("Fusluge.xml");
+    
      //iz baze
      $rezultat = $veza->query("DELETE FROM `fusluge` WHERE `fusluge`.`id` = $red ");
     
@@ -187,20 +147,7 @@ break;
     $pr='cijenak'.(string)$red ;
      $n=$_REQUEST[$i];
     $c=$_REQUEST[$pr];
-    $xml = new DOMDocument('1.0', 'UTF-8');
-    $xml->load("Kusluge.xml");
-    $xmlKorijen= $xml->documentElement;
-     $items= $xml->getElementsByTagName('kusluga');
-
-     for ($i = 0; $i < $items->length; $i++) {
-  if($i === $red -1){
-       $cvor=$items->item($i);
-       $roditelj= $items->item($i)->parentNode; 
-        $roditelj->removeChild($cvor);      
-break;     
-  }
-  }
-    $xml->save("Kusluge.xml");
+    
      //iz baze
     
      $opis= $veza->query("DELETE FROM `uslugedetalji` WHERE `nazivusluge` LIKE '$n';");
@@ -229,17 +176,7 @@ if(isset($_REQUEST['dodavanjef'])){
     }
     else{$greska1="";
     
-     if (file_exists('Fusluge.xml')){
-    $xml = new DOMDocument('1.0', 'UTF-8');
-    $xml->load("Fusluge.xml");
-    $xmlKorijen= $xml->documentElement;
-    $kontakt = $xml->createElement("fusluga");
-    $xmlKorijen->appendChild($kontakt);
-
-    $kontakt->appendChild($xml->createElement('naziv',$n));
-    $kontakt->appendChild($xml->createElement('cijena',$c));
-    $xml->save("Fusluge.xml");
-}
+    
          
          
    $rezultat = $veza->query("INSERT INTO `fusluge` (`id`, `nazivusluge`, `cijena`) VALUES (NULL, '$n', '$c');");
@@ -267,17 +204,7 @@ if(isset($_REQUEST['dodavanjek'])){
     }
     else{$greska="";
     
-     if (file_exists('Kusluge.xml')){
-    $xml = new DOMDocument('1.0', 'UTF-8');
-    $xml->load("Kusluge.xml");
-    $xmlKorijen= $xml->documentElement;
-    $kontakt = $xml->createElement("kusluga");
-    $xmlKorijen->appendChild($kontakt);
-
-    $kontakt->appendChild($xml->createElement('naziv',$n));
-    $kontakt->appendChild($xml->createElement('cijena',$c));
-    $xml->save("Kusluge.xml");
-}
+    
     $autorid= $veza->query("SELECT id FROM `korisnici` WHERE username LIKE '$autor';");
         $aid=$autorid->fetchColumn();
      $rezultat = $veza->query("INSERT INTO `kusluge` (`id`, `nazivusluge`, `cijena`) VALUES (NULL, '$n', '$c');");
@@ -338,7 +265,6 @@ print "<br>";
     
 //CJENOVNIK Kozmeticke
 //if (file_exists("Kusluge.xml")) {
-$xml = simplexml_load_file("Kusluge.xml");
 
 print "<table class='admintabela'>";
 print "<TR> <TH>Kozmetičke usluge</TH> <TH>Cijena</TH></TR>";
