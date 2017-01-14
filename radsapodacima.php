@@ -114,6 +114,8 @@ if(isset($_REQUEST['mijenjanjek'])){
          $autorid= $veza->query("SELECT id FROM `korisnici` WHERE username LIKE '$autor';");
         $aid=$autorid->fetchColumn();    
     
+        
+         
         $r= $veza->query("UPDATE `kusluge` SET `nazivusluge` = '$n', `cijena` = '$c' WHERE `id` = '$red';");    
         $upitopis= $veza->query("UPDATE `uslugedetalji` SET  `opis`='Ovo je defaultni opis usluge. Stranica je u izradi. Pravi opisi naknadno ce biti dodani.', `autor`='$aid' WHERE `nazivusluge` LIKE '$n';");
             
