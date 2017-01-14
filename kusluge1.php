@@ -78,7 +78,7 @@ header("location: admin.php");
 		<div class="underline" style="width: 70%;margin-right: 5%;	margin-left: 5%;"> <h1>Kozmetičke usluge</h1></div>
         
 		<?php
-        $veza = new PDO("mysql:dbname=beautysalon;host=mysql-55-centos7", "zerina", "wtspirala4");
+$veza = new PDO("mysql:dbname=beautysalon;host=mysql-55-centos7;charset=utf8", "zerina", "wtspirala4");
         $veza->exec("set names utf8");
         $upit= $veza->query("SELECT id, nazivusluge, cijena FROM `kusluge` order by id asc");
         
@@ -112,7 +112,7 @@ header("location: admin.php");
          
 <?php
         
-$veza = new PDO("mysql:dbname=beautysalon;host=mysql-55-centos7", "zerina", "wtspirala4");
+$veza = new PDO("mysql:dbname=beautysalon;host=mysql-55-centos7;charset=utf8", "zerina", "wtspirala4");
 $veza->exec("set names utf8");
 
         $q="Čupanje obrva";
