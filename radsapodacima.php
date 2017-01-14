@@ -221,8 +221,7 @@ if(isset($_REQUEST['dodavanjek'])){
     
     
 //CJENOVNIK Frizerske
- if (file_exists("Fusluge.xml")) {
-    $xml = simplexml_load_file("Fusluge.xml");
+ 
 
 print "<table class='admintabela'>";
 print "<TR> <TH>Frizerske usluge</TH> <TH>Cijena</TH></TR>";
@@ -258,7 +257,7 @@ print "<form> ";
 print "</table>";
 print "<br><div style='float:left;'>".$greska1."</div>";
      
- }
+ 
 print "<br>";
    
     
